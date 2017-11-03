@@ -33,7 +33,7 @@ test:
     - Leap              [not linux]
 
 about:
-  home: https://www.leapmotion.com/
-  license: Proprietary
+  home: https://developer.leapmotion.com/
+  license: Leap Motion SDK Agreement
   license_url: https://developer.leapmotion.com/sdk_agreement
   summary: 'Leap Motion SDK (Python modules only)'
