@@ -1,0 +1,39 @@
+{% set version = "2.3.1+31549" %}
+
+package:
+  name: leap-motion-python
+  version: {{ version }}
+
+source:
+  fn: Leap_Motion_SDK_Linux_{{ version }}.tgz [linux]
+  fn: Leap_Motion_SDK_Mac_{{ version }}.tgz [osx]
+  fn: Leap_Motion_SDK_Windows_{{ version }}.zip [win]
+  url: http://warehouse.leapmotion.com/apps/4185/download [linux]
+  url: http://warehouse.leapmotion.com/apps/4181/download [osx]
+  url: http://warehouse.leapmotion.com/apps/4183/download [win]
+  md5: d9facdfed290823d3a5358ca5077e883 [linux]
+  md5: 4a3dd70c49bc89dcb5f6dd10ca72c824 [osx]
+  md5: 2cc793fad79e1285dd0c8882aef482c0 [win]
+
+requirements:
+  build:
+    - python
+    - swig
+    - gcc 4.8*          [linux]
+  run:
+    - python
+    - libgcc >=4.8      [linux]
+    - vs2013_runtime    [win]
+
+build:
+  number: 0
+
+test:
+  imports:
+    - Leap              [not linux]
+
+about:
+  home: https://www.leapmotion.com/
+  license: Proprietary
+  license_url: https://developer.leapmotion.com/sdk_agreement
+  summary: 'Leap Motion SDK (Python modules only)'
