@@ -17,12 +17,12 @@ source:
 
 requirements:
   build:
-    - python
+    - {{ compiler('cxx') }}
     - swig
-    - gcc 4.8*          [linux]
+  host:
+    - python
   run:
     - python
-    - libgcc >=4.8      [linux]
     - vs2013_runtime    [win]
 
 build:
